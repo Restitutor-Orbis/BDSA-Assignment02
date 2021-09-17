@@ -2,7 +2,7 @@ using System;
 
 namespace Library
 {
-    enum Status 
+    public enum Status 
     {
         New, Active, Dropout, Graduated
     }
