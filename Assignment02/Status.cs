@@ -4,6 +4,6 @@ namespace Library
 {
     public enum Status 
     {
-        New, Active, Dropout, Graduated
+        New, Active, Dropout, Graduated, Invalid
     }
 }
