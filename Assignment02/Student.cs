@@ -9,6 +9,10 @@ namespace Library
         public string Surname { get; set; }
         public Status Status { 
             get {
+                //prevent illogical dates
+                if(StartDate.CompareTo(GraduationDate) > 0) return Status.Invalid;
+                if(StartDate.CompareTo(EndDate) > 0)        return Status.Invalid;
+
                 if (StartDate.CompareTo(DateTime.Now) > 0) {
                     return Status.New;
                 } else if (EndDate.CompareTo(DateTime.Now) > 0 && GraduationDate.CompareTo(DateTime.Now) > 0) {
