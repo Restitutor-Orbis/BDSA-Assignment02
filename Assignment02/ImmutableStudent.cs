@@ -2,7 +2,7 @@ using System;
 
 namespace Library
 {
-    public class ImmutableStudent 
+    public record ImmutableStudent 
     {
         public int Id { get; init; }
         public string GivenName { get; init; }
