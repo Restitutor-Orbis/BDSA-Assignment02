@@ -11,6 +11,7 @@ namespace Library.Tests
             //start date, end date, graduation date, expected status
             new object[] {new DateTime(2020, 2, 20), new DateTime(2023, 2, 20), new DateTime(2023, 2, 20), Status.Active},
             new object[] {new DateTime(2020, 2, 20), new DateTime(2021, 2, 20), new DateTime(2023, 2, 20), Status.Dropout},
+
             new object[] {new DateTime(2000, 1, 1),  new DateTime(2000, 12, 30), new DateTime(3000, 7, 1), Status.Dropout},
             new object[] {new DateTime(2010, 1, 1),  new DateTime(2015, 6, 29), new DateTime(2015, 6, 29), Status.Graduated},
             new object[] {new DateTime(1900, 1, 1),  new DateTime(2021, 7, 1), new DateTime(2015, 7, 1), Status.Graduated},
@@ -21,6 +22,12 @@ namespace Library.Tests
             new object[] {new DateTime(2020, 1, 1),  new DateTime(2010, 1, 1), new DateTime(2023, 7, 1), Status.Invalid},
             new object[] {new DateTime(2120, 1, 1),  new DateTime(2023, 1, 1), new DateTime(2023, 1, 1), Status.Invalid},
         };
+
+
+           
+
+
+    
 
         [Theory, MemberData(nameof(StudentDatesData))]
         public void student_status_correctlyAssigned(DateTime startDate, DateTime endDate, DateTime graduationDate, Status expected) 
@@ -36,6 +43,6 @@ namespace Library.Tests
 
             //Assert
             Assert.Equal(expected, actual);
-        }
+        }      
     }
 }
